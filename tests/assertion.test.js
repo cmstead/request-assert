@@ -3,7 +3,7 @@ const promisePuppeteer = require('promise-puppeteer');
 
 describe("Assertion", function () {
 
-    let asyncAssertion;
+    let assertion;
     let thenableFake;
 
     before(function () {
