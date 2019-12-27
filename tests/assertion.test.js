@@ -11,7 +11,7 @@ describe("Assertion", function () {
     let assertion;
     let thenableFake;
 
-    before(function () {
+    beforeEach(function () {
         thenableFake = promisePuppeteer.getThenableFake();
         const asyncAction = () => thenableFake;
 
@@ -48,6 +48,10 @@ describe("Assertion", function () {
             .catch(() => {
                 assert.isTrue(resolutionState);
             });
+    });
+
+    it("throws an error when assertResult is called more than once", function(){
+        assert.throws(() => assertion.assertResult(() => null).assertResult(), 'Function assertResult cannot be called more than once.');
     });
 
 });

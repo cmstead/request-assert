@@ -7,9 +7,9 @@ function AsyncAssertion(asyncAction) {
 
 AsyncAssertion.prototype = {
     assertResult: function(resultTransform) {
-        // if(this.resultTransform !== null) {
-        //     throw new Error('Function assertResult cannot be called more than once.');
-        // }
+        if(this.resultTransform !== null) {
+            throw new Error('Function assertResult cannot be called more than once.');
+        }
 
         this.resultTransform = resultTransform;
 
