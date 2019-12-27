@@ -43,7 +43,7 @@ describe("Assertion", function () {
             .then(() => {
                 resolutionState = false;
 
-                assert.isTrue(resolutionState);
+                assert.isTrue(resolutionState, 'Assertion did not fail on bad equality');
             })
             .catch(() => {
                 assert.isTrue(resolutionState);
