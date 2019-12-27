@@ -1,0 +1,45 @@
+{
+    "name": "request-assert",
+    "version": "1.0.0",
+    "description": "A library to simplify testing API endpoint integrations",
+    "main": "index.js",
+    "scripts": {
+        "test": "node ./node_modules/nanocommit/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cmstead/request-assert.git"
+    },
+    "keywords": [
+        "testing",
+        "tdd",
+        "\"integration",
+        "testing\"",
+        "bdd",
+        "assertion"
+    ],
+    "author": "Chris Stead",
+    "license": "MPL-2.0",
+    "bugs": {
+        "url": "https://github.com/cmstead/request-assert/issues"
+    },
+    "homepage": "https://github.com/cmstead/request-assert#readme",
+    "nanocommit": {
+        "testCommand": "node ./node_modules/mocha/bin/mocha ./tests/**/*.test.js",
+        "blindCommit": true,
+        "annotations": "nanocommit",
+        "watchFiles": [],
+        "defaultCommandArgs": null,
+        "commitMessage": null,
+        "customAnnotations": null
+    },
+    "devDependencies": {
+        "mocha": "^6.2.2",
+        "nanocommit": "^1.13.0",
+        "promise-puppeteer": "^1.1.0"
+    },
+    "dependencies": {
+        "chai": "^4.2.0",
+        "request": "^2.88.0"
+    }
+}
