@@ -62,7 +62,7 @@ describe("Assertion", function () {
         const assertion = new AsyncAssertion(callbackStyleAction);
 
         return assertion
-            .assertResult(x => x.data[0])
+            .assertResult(x => x)
             .equals('something');
     });
 

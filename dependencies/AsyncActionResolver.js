@@ -14,10 +14,11 @@ AsyncActionResolver.prototype = {
         return new Promise((resolve, reject) => {
             const maybePromise = this
                 .asyncAction(function (error, ...args) {
-                    resolve({
-                        error: error,
-                        data: args
-                    });
+                    if(error) {
+                        reject(error);
+                    } else {
+                        resolve(...args);
+                    }
                 });
 
             if (this.isAPromise(maybePromise)) {
