@@ -1,7 +1,8 @@
 const { assert } = require('chai');
+const AsyncActionResolver = require('./AsyncActionResolver');
 
 function AsyncAssertion(asyncAction) {
-    this.asyncAction = asyncAction;
+    this.asyncActionResolver = new AsyncActionResolver(asyncAction);
     this.resultTransform = null;
 }
 
@@ -18,7 +19,8 @@ AsyncAssertion.prototype = {
 
     equals: function (expectedResult, message) {
         return new Promise((resolve, reject) => {
-            this.asyncAction()
+            this.asyncActionResolver
+                .resolve()
                 .then(this.resultTransform)
                 .then((value) => assert.equal(value, expectedResult, message))
                 .then(() => resolve(true))

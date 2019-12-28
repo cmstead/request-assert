@@ -54,4 +54,16 @@ describe("Assertion", function () {
         assert.throws(() => assertion.assertResult(() => null).assertResult(), 'Function assertResult cannot be called more than once.');
     });
 
+    it("properly resolves callback-style async actions", function(){
+        function callbackStyleAction (callback) {
+            setTimeout(() => callback(null, 'something'), 15);
+        }
+
+        const assertion = new AsyncAssertion(callbackStyleAction);
+
+        return assertion
+            .assertResult(x => x.data[0])
+            .equals('something');
+    });
+
 });
