@@ -68,7 +68,6 @@ AsyncAssertion.prototype = {
             const handleResolution = this.buildResolutionHandler(resolve, reject, args);
             const handleError = this.buildRejectionHandler(resolve, reject, args)
 
-
             this.asyncActionResolver
                 .resolve()
                 .then(handleResolution)
